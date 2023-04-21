@@ -67,6 +67,6 @@ app.post('/cookie', (req, res) => {
     }
 });
 
-app.listen(() => {
+app.listen(process.env.PORT || 3008, () => {
     console.log(`Server is running on ${process.env.PORT || 3008} port`);
 });
