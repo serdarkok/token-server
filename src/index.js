@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
-const PORT = 3008;
 const checkCookies = require('./middlewares/checkCookies');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require("helmet");
 const fs = require('fs');
+require('dotenv').config();
 
 var whitelist = ['http://localhost:3000', 'http://localhost:8080'];
 
@@ -67,6 +67,6 @@ app.post('/cookie', (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on ${PORT} port`);
+app.listen(() => {
+    console.log(`Server is running on ${process.env.PORT || 3008} port`);
 });
