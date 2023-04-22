@@ -8,7 +8,7 @@ const helmet = require("helmet");
 const fs = require('fs');
 require('dotenv').config();
 
-var whitelist = ['http://localhost:3000', 'http://localhost:8080'];
+var whitelist = ['http://localhost:3000', 'http://localhost:8080', 'https://live.drpatoloji.com'];
 
 var corsOptions = {
     origin: function (origin, callback) {
@@ -27,7 +27,7 @@ var corsOptions = {
 
 app.use(helmet());
 
-app.use(cors({ origin: '*'}));
+app.use(cors(corsOptions));
 
 app.use(cookieParser());
 
