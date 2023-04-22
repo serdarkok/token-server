@@ -1,6 +1,7 @@
 const axios = require('axios');
 
 const checkCookies = async (req, res, next) => {
+    console.log(req);
     const { ga_analytics } = req.cookies;
     console.log(ga_analytics);
     try {
