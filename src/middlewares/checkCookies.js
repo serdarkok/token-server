@@ -4,7 +4,7 @@ const checkCookies = async (req, res, next) => {
     const { ga_analytics } = req.cookies;
     console.log(ga_analytics);
     try {
-        const response = await axios.get('http://localhost:3000/users/verifytoken', {
+        const response = await axios.get('https://api.drpatoloji.com/users/verifytoken', {
             method: 'get',
             responseType: 'json',
             responseEncoding: 'utf8',
@@ -12,6 +12,7 @@ const checkCookies = async (req, res, next) => {
                 token: ga_analytics
             },
         });
+        console.log(response);
         next(); 
     } catch (error) {
         console.log(error.data);
